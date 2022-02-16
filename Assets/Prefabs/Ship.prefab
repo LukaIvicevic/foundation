@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff47ea363c86ae4f8a1720627e324d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrustToggle: {fileID: 2515615513103787492}
+  _thrustToggle: {fileID: 2515615513103787492}
 --- !u!1 &2515615514382367760
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _thrustToggle: {fileID: 2515615514022463281}
-  thrust: 30000
+  _thrust: 2000
 --- !u!65 &6222474444165351997
 BoxCollider:
   m_ObjectHideFlags: 0

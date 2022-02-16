@@ -1781,6 +1781,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 880168968779521976, guid: 22113f8a45d0c8440b96a93fac9f74a7, type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 880168968779521983, guid: 22113f8a45d0c8440b96a93fac9f74a7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.19038
+      objectReference: {fileID: 0}
+    - target: {fileID: 880168968779521983, guid: 22113f8a45d0c8440b96a93fac9f74a7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.0282307
+      objectReference: {fileID: 0}
     - target: {fileID: 880168970432184496, guid: 22113f8a45d0c8440b96a93fac9f74a7, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1841,6 +1853,10 @@ PrefabInstance:
     - target: {fileID: 2515615514382367760, guid: f4d875dc526dfa14a8c84fc39e0cf18f, type: 3}
       propertyPath: m_Name
       value: Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515615514382367788, guid: f4d875dc526dfa14a8c84fc39e0cf18f, type: 3}
+      propertyPath: _thrust
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 2515615514382367790, guid: f4d875dc526dfa14a8c84fc39e0cf18f, type: 3}
       propertyPath: m_Interpolate
