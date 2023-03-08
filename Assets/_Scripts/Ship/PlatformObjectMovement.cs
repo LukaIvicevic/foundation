@@ -11,7 +11,8 @@ public class PlatformObjectMovement : MonoBehaviour
             return;
         }
 
-        other.transform.parent = transform;
+        Debug.Log("Setting " + other.name + "'s transform parent to " + transform.name);
+        other.transform.parent.transform.parent = transform;
     }
 
     private void OnTriggerExit(Collider other)
@@ -21,6 +22,17 @@ public class PlatformObjectMovement : MonoBehaviour
             return;
         }
 
-        other.transform.parent = null;
+        other.transform.parent.transform.parent = null;
+    }
+
+    private void OnTriggerStay(Collider other) {
+        if (!other.CompareTag("Player"))
+        {
+            return;
+        }
+
+        if (other.name == "Body" && other.transform.parent.name == "Player") {
+            other.GetComponent<Rigidbody>().AddForce(Vector3.down, ForceMode.Force);
+        }
     }
 }

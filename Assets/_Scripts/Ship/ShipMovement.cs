@@ -12,11 +12,13 @@ public class ShipMovement : MonoBehaviour
 
     private bool _isThrustActive = false;
     private Rigidbody _rb;
+    private Vector3 _previousLocViaLastThrust = new Vector3(0, 0, 0);
 
     private void Start()
     {
         _thrustToggle.onThrustToggle += OnThrustToggle;
         _rb = GetComponent<Rigidbody>();
+        _previousLocViaLastThrust = transform.position;
     }
 
     private void FixedUpdate()
@@ -34,7 +36,14 @@ public class ShipMovement : MonoBehaviour
         if (_isThrustActive)
         {
             _rb.AddForce(transform.forward * _thrust * Time.fixedDeltaTime, ForceMode.Force);
+            _previousLocViaLastThrust = transform.position;
+        } else {
+            _rb.velocity = Vector3.zero;
+            // Debug.Log("Previous last thrust: " + transform.position);
+            // transform.position = _previousLocViaLastThrust;  // Lock ship if it's not moving via its own thrust
         }
+        _rb.constraints = RigidbodyConstraints.FreezePosition;
+        // Debug.Log("Ship velocity: " + _rb.velocity);
     }
 
     private void OnThrustToggle(object sender, bool isThrustActive)
